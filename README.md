@@ -1,13 +1,18 @@
 # ServerServices
-Repository for helping with installation of Linux Server Applications
+Repository for helping with installation and setup of Linux Server Applications
 
-# Categories Example
+# Service Types
 
-## [📚 Category 1: Books](./Books/)
+## [💻 Monitoring](./monitoring/)
 
-## [🎬 Category 2: Movies](./Movies/)
+## [💻 Database](./database/)
 
-## [💻 Category 3: Tech](./Tech/)
+## [💻 Security](./security/)
 
-## [🎵 Category 4: Music](./Music/)
+## [💻 Users/Authentication](./authentication/)
 
+## [💻 Files](./files/)
+
+## [💻 Network](./networking/)
+
+## [💻 ](./ /)
