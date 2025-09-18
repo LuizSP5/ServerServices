@@ -1,9 +1,9 @@
-## UniFi Network Server
+# UniFi Network Server
 
 https://ui.com/download
 https://help.ui.com/hc/en-us/articles/220066768-Updating-and-Installing-Self-Hosted-UniFi-Network-Servers-Linux
 
-# Requirements:
+## Requirements:
 
   - Required packages 
     ```
@@ -21,7 +21,7 @@ https://help.ui.com/hc/en-us/articles/220066768-Updating-and-Installing-Self-Hos
       sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 06E85760C0A52C50
     ```
 
-# Commands:
+## Commands:
   ```
     sudo service unifi stop
   ```
@@ -32,7 +32,7 @@ https://help.ui.com/hc/en-us/articles/220066768-Updating-and-Installing-Self-Hos
     sudo service unifi status
   ```
 
-# Files Location
+## Files Location
 logs
     ```
       /usr/lib/unifi/logs/server.log
