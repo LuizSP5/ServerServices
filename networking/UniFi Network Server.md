@@ -33,14 +33,14 @@ https://help.ui.com/hc/en-us/articles/220066768-Updating-and-Installing-Self-Hos
   ```
 
 ## Files Location
-logs
+#### logs
     ```
       /usr/lib/unifi/logs/server.log
     ```
     ```
       /usr/lib/unifi/logs/mongod.log
     ```
-installation
+#### installation
     ```
       /usr/lib/unifi/
     ```
