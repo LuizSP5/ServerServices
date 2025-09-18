@@ -11,11 +11,11 @@ https://github.com/glpi-project
 #### PHP extensions
  
   ```
-  sudo apt install php-dom php-fileinfo php-filter php-libxml php-json php-simplexml php-xmlreader php-xmlwriter php-curl php-gd php-mysqli
+    sudo apt install php-dom php-fileinfo php-filter php-libxml php-json php-simplexml php-xmlreader php-xmlwriter php-curl php-gd php-mysqli
   ```
 ## Installing and setting up MariaDB
 
-```
+  ```
     sudo apt install mariadb-server
     sudo mysql_secure_installation
     sudo mysql -u root -p
@@ -69,19 +69,21 @@ https://github.com/glpi-project
 
 #### disable the default apache site
 ```
-a2dissite 000-default.conf  
+    a2dissite 000-default.conf  
 ```
 #### enable the rewrite module
 ```
-a2enmod rewrite             
+    a2enmod rewrite             
 ```
 #### enable the new apache virtual host settings for glpi instance
 ```
-a2ensite glpi.conf         
+    a2ensite glpi.conf         
 ```
 #### restart apache
 ```
-service apache2 restart
+    service apache2 restart
 ```
 
+
+#GLPI Agent
 
