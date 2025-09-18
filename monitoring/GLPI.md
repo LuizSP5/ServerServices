@@ -1,22 +1,21 @@
+# GLPI 
+https://github.com/glpi-project
+- Access via web-interface http://<server_ip>/glpi
 
-Requirements
+  
+## Install Php
   ```
-      sudo apt update
       sudo apt install php
   ```
 
-  PHP extensions
+#### PHP extensions
+ 
   ```
   sudo apt install php-dom php-fileinfo php-filter php-libxml php-json php-simplexml php-xmlreader php-xmlwriter php-curl php-gd php-mysqli
   ```
-  ```
-      wget https://glpi-project.org/downloads/
-      tar -xvf glpi.tgz
-      mv glpi /var/www/html
-      chown www-data:www-data /var/www/html/glpi/* -R
-  ```
-  
-  ```
+## Installing and setting up MariaDB
+
+```
     sudo apt install mariadb-server
     sudo mysql_secure_installation
     sudo mysql -u root -p
@@ -29,7 +28,16 @@ Requirements
     QUIT;
   ```
 
-  Create a file in '/etc/apache2/sites-available/glpi.conf'
+## Install GLPI
+  ```
+      wget https://glpi-project.org/downloads/
+      tar -xvf glpi.tgz
+      mv glpi /var/www/html
+      chown www-data:www-data /var/www/html/glpi/* -R
+  ```
+
+
+  ## Create a file in '/etc/apache2/sites-available/glpi.conf'
   ```
         <VirtualHost *:80>
           ServerName glpi.localhost
@@ -57,23 +65,23 @@ Requirements
           </Directory>
       </VirtualHost>
   ```
-Enable the new apache settings
+## Enable the new apache settings
 
-# disable the default apache site
+#### disable the default apache site
 ```
 a2dissite 000-default.conf  
 ```
-# enable the rewrite module
+#### enable the rewrite module
 ```
 a2enmod rewrite             
 ```
-# enable the new apache virtual host settings for glpi instance
+#### enable the new apache virtual host settings for glpi instance
 ```
 a2ensite glpi.conf         
 ```
-# restart apache
+#### restart apache
 ```
 service apache2 restart
 ```
 
-  
+
