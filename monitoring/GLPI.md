@@ -18,22 +18,40 @@
 
 ```
   sudo apt install mariadb-server
+```
+```
   sudo mysql_secure_installation
+```
+
+#### Enter database
+```
   sudo mysql -u root -p
 ```
 
 ```
   CREATE USER 'glpi'@'localhost' IDENTIFIED BY '1';
+```
+```
   GRANT ALL ON glpi.* TO 'glpi'@'localhost' WITH GRANT OPTION;
-  FLUSH PRIVILEGES;
-  QUIT;
+```
+```
+FLUSH PRIVILEGES;
+```
+```
+QUIT;
 ```
 
 ## Install GLPI
 ```
   wget https://glpi-project.org/downloads/
+```
+```
   tar -xvf glpi.tgz
+```
+```
   mv glpi /var/www/html
+```
+```
   chown www-data:www-data /var/www/html/glpi/* -R
 ```
 
