@@ -38,8 +38,7 @@
 #### logs
     ```
       /usr/lib/unifi/logs/server.log
-    ```
-    ```
+
       /usr/lib/unifi/logs/mongod.log
     ```
 #### installation
