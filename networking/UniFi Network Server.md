@@ -3,6 +3,8 @@
 - https://ui.com/download 
 - https://help.ui.com/hc/en-us/articles/220066768-Updating-and-Installing-Self-Hosted-UniFi-Network-Servers-Linux
 
+- Access via web-interface <server_ip>:8443
+
 ## Requirements:
 
   - Required packages 
