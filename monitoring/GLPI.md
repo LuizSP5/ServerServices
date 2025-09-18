@@ -30,15 +30,9 @@
 
 ```
   CREATE USER 'glpi'@'localhost' IDENTIFIED BY '1';
-```
-```
   GRANT ALL ON glpi.* TO 'glpi'@'localhost' WITH GRANT OPTION;
-```
-```
-FLUSH PRIVILEGES;
-```
-```
-QUIT;
+  FLUSH PRIVILEGES;
+  QUIT;
 ```
 
 ## Install GLPI
