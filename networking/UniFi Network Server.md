@@ -36,12 +36,11 @@
 
 ## Files Location
 #### logs
-    ```
+    
       /usr/lib/unifi/logs/server.log
-
       /usr/lib/unifi/logs/mongod.log
-    ```
+    
 #### installation
-    ```
+ 
       /usr/lib/unifi/
-    ```
+
