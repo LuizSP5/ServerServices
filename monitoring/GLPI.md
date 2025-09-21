@@ -14,6 +14,9 @@
 ```
   sudo apt install php-dom php-fileinfo php-filter php-libxml php-json php-simplexml php-xmlreader php-xmlwriter php-curl php-gd php-mysqli
 ```
+```
+  sudo apt update && sudo apt install -y php8.3 php8.3-cli php8.3-common php8.3-curl php8.3-gd php8.3-intl php8.3-mysql php8.3-mbstring php8.3-xml php8.3-bz2 php8.3-zip php8.3-exif php8.3-ldap php8.3-opcache php8.3-readline php8.3-soap php8.3-fileinfo
+```
 ## Installing and setting up MariaDB
 
 ```
