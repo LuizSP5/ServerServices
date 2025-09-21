@@ -116,5 +116,25 @@
 
 
 
-#GLPI Agent
+# GLPI Agent
+
+- https://github.com/glpi-project/glpi-agent
+
+```
+  sudo apt update && sudo apt install -y libfile-which-perl libwww-perl libnet-ip-perl libtext-template-perl libuniversal-require-perl libxml-libxml-perl libcpanel-json-xs-perl libthread-queue-any-perl libnet-nbname-perl libnet-snmp-perl
+```
+```
+  sudo apt update && sudo apt install -y libio-compress-perl libhttp-daemon-perl libio-socket-ssl-perl liblwp-protocol-https-perl libproc-daemon-perl libproc-pid-file-perl
+```
+```
+  sudo apt update && sudo apt install -y libnet-snmp-perl libthread-queue-any-perl net-tools libcrypt-des-perl libnet-write-perl libdigest-sha-perl libfile-copy-recursive-perl libcpanel-json-xs-perl liburi-perl libnet-ping-perl libparallel-forkmanager-perl
+
+```
+```
+  wget https://github.com/glpi-project/glpi-agent/releases/download/1.15/glpi-agent-1.15-linux-installer.pl
+```
+```
+  perl glpi-agent.pl
+```
+
 
