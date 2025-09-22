@@ -1,8 +1,8 @@
-# ZABBIX
+# ZABBIX SERVER
 - Access Web-Interface:  
 http://<server_IP>/zabbix  
 
-Choose the desired platform, version and resourses on:  
+Choose the component to be server, frontend, agent:  
 - https://www.zabbix.com/download?zabbix=7.4&os_distribution=ubuntu&os_version=24.04&components=server_frontend_agent&db=mysql&ws=apache
 
 ### Install Zabbix Server, Frontend, Agent
@@ -95,3 +95,40 @@ zabbix
 ```  
 <img width="343" height="354" alt="image" src="https://github.com/user-attachments/assets/54b1bd1e-76c6-4916-92c8-debd823f299b" />  
 <img width="774" height="923" alt="image" src="https://github.com/user-attachments/assets/19ddffd0-ef31-4842-8b47-3d0a1e9e040b" />  
+
+# ZABBIX AGENT 2
+## (On clients)
+
+Choose the component to be Agent2:  
+- https://www.zabbix.com/download?zabbix=7.4&os_distribution=ubuntu&os_version=24.04&components=agent_2&db&ws  
+
+  wget https://repo.zabbix.com/zabbix/7.4/release/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.4+ubuntu24.04_all.deb  
+
+
+  dpkg -i zabbix-release_latest_7.4+ubuntu24.04_all.deb
+
+
+  apt update
+
+
+  apt install zabbix-agent2
+
+
+  apt install zabbix-agent2-plugin-mongodb zabbix-agent2-plugin-mssql zabbix-agent2-plugin-postgresql
+
+### Set-up the .conf file
+
+  vi /etc/zabbix/zabbix_agentd2.conf
+
+
+  Server = <Server_IP>
+  ServerActive = <Server_IP>
+  Hostname = Zabbix Server
+
+  systemctl restart zabbix-agent2
+  systemctl enable zabbix-agent2 
+
+
+  
+  
+  
