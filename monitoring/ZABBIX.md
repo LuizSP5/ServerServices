@@ -81,3 +81,17 @@ Choose the desired platform, version and resourses on:
 
 
 <img width="774" height="462" alt="image" src="https://github.com/user-attachments/assets/3ff8524a-69ed-4d7c-9662-184ecda4d76c" />
+<img width="784" height="471" alt="image" src="https://github.com/user-attachments/assets/94ee9728-c3d2-4a14-87d3-f882a5c95116" />
+<img width="777" height="464" alt="image" src="https://github.com/user-attachments/assets/833a6741-22fa-426e-9f12-c797346a05a6" />
+
+Log In with default user and password
+User:    
+```
+Admin
+```
+Password:    
+```
+zabbix
+```
+<img width="343" height="354" alt="image" src="https://github.com/user-attachments/assets/54b1bd1e-76c6-4916-92c8-debd823f299b" />
+<img width="1859" height="923" alt="image" src="https://github.com/user-attachments/assets/19ddffd0-ef31-4842-8b47-3d0a1e9e040b" />
