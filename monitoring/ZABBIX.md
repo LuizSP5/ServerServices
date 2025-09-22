@@ -101,33 +101,34 @@ zabbix
 
 Choose the component to be Agent2:  
 - https://www.zabbix.com/download?zabbix=7.4&os_distribution=ubuntu&os_version=24.04&components=agent_2&db&ws  
-
+```
   wget https://repo.zabbix.com/zabbix/7.4/release/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.4+ubuntu24.04_all.deb  
-
-
+```
+```
   dpkg -i zabbix-release_latest_7.4+ubuntu24.04_all.deb
-
-
+```
+```
   apt update
-
-
+```
+```
   apt install zabbix-agent2
-
-
+```
+```
   apt install zabbix-agent2-plugin-mongodb zabbix-agent2-plugin-mssql zabbix-agent2-plugin-postgresql
-
+```
 ### Set-up the .conf file
-
+```
   vi /etc/zabbix/zabbix_agentd2.conf
-
-
+```
+```
   Server = <Server_IP>
   ServerActive = <Server_IP>
   Hostname = Zabbix Server
-
+```
+```
   systemctl restart zabbix-agent2
   systemctl enable zabbix-agent2 
-
+```
 
   
   
