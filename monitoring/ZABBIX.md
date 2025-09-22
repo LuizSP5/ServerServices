@@ -1,6 +1,6 @@
 # ZABBIX
 
-- http://<localhost>/zabbix
+- http://<server_IP>/zabbix
 
 Choose the desired platform, version and resourses on:
 -https://www.zabbix.com/download?zabbix=7.4&os_distribution=ubuntu&os_version=24.04&components=server_frontend_agent&db=mysql&ws=apache
