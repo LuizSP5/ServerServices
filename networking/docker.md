@@ -27,6 +27,10 @@ or
   sudo service docker status
   sudo service docker stop
 ```
+- Enter inside a container
+```
+  docker exec -it <containerName> bash 
+```
 
 - Search images  
 ```
@@ -37,7 +41,7 @@ or
 ```
   docker ps
 ```
-Show all containers: -a  
+- Show all containers: -a  
 
 ```
 attach Attach to a running container
@@ -58,7 +62,7 @@ load Load an image from a tar archive
 login Register or Login to the docker registry server
 logs Fetch the logs of a container
 port Lookup the public-facing port which is NAT-ed to PRIVATE_PORT
-ps List containers
+
 pull Pull an image or a repository from the docker registry server
 push Push an image or a repository to the docker registry server
 restart Restart a running container
@@ -66,7 +70,7 @@ rm Remove one or more containers
 rmi Remove one or more images
 run Run a command in a new container
 save Save an image to a tar archive
-search Search for an image in the docker index
+
 start Start a stopped container
 stop Stop a running container
 tag Tag an image into a repository
