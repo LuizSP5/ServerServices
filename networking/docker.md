@@ -21,27 +21,32 @@ or
 
 ## Commands
 
-- Services
+#### Services
 ```
   sudo service docker start
   sudo service docker status
   sudo service docker stop
 ```
-- Enter inside a container
+#### Enter inside a container
+Enter and dont stop the execution of container
 ```
-  docker exec -it <containerName> bash 
+  docker exec -it <containerName> bash
+```
+Enter and stop the execution
+```
+docker attach <containerName>
 ```
 
-- Search images  
+#### Search images  
 ```
   docker search <name>
 ```
 
-- Show running containers
+#### Show running containers
 ```
   docker ps
 ```
-- Show all containers: -a  
+#### Show all containers: -a  
 
 ```
 attach Attach to a running container
@@ -81,12 +86,12 @@ wait Block until a container stops, then print its exit code
 
 Parameters for command **#run**
 ```
-  -d Execução do container em background
-  -i Modo interativo. Mantém o STDIN aberto mesmo sem console anexado
+  -d run in background
+  -i Iterative mode. Mantém o STDIN aberto mesmo sem console anexado
   -t Aloca uma pseudo TTY (TeleTypewriter)
-  -rm Automaticamente remove o container após finalização
-  --name Nomear o container
-  -v Mapeamento de volume
-  -p Mapeamento de porta
-  -m Limite de uso de memória
+  -rm Removes the container after the exection
+  --name Name the container
+  -v Volume mapping
+  -p Port mapping
+  -m Memory usage limit
 ```
