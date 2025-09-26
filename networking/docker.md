@@ -45,8 +45,9 @@ docker attach <containerName>
 #### Show running containers
 ```
   docker ps
+  docker ps -a  //show all containers
 ```
-#### Show all containers: -a  
+
 
 ```
 attach Attach to a running container
@@ -83,7 +84,7 @@ top Lookup the running processes of a container
 version Show the docker version information
 wait Block until a container stops, then print its exit code  
 ```
-
+run Run a command in a new container
 Parameters for command **#run**
 ```
   -d run in background
