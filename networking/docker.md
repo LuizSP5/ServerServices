@@ -47,6 +47,8 @@ docker attach <containerName>
   docker ps
   docker ps -a  //show all containers
 ```
+#### Start new container
+docker run -it --name <name> <-p 8080:80> <image_id> /bin/bash
 
 
 ```
