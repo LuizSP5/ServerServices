@@ -97,8 +97,9 @@ Conteúdo:
 Gere o certificado autoassinado da CA:
 
 ``` bash
-sudo certtool --generate-self-signed   --load-privkey /etc/ssl/private/mycakey.pem   --template /etc/ssl/ca.info   --outfile /usr/local/share/ca-certificates/mycacert.crt
-
+sudo certtool --generate-self-signed   --load-privkey /etc/ssl/private/mycakey.pem   --template /etc/ssl/private/ca.info   --outfile /usr/local/share/ca-certificates/mycacert.crt
+```
+```
 sudo dpkg-reconfigure ca-certificates
 ```
 
