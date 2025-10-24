@@ -31,6 +31,7 @@ Choose the component to be server, frontend, agent:
   set global log_bin_trust_function_creators = 1;
   quit;
 ```
+*WAIT FOR IT TO FINISH!!*
 ```
   zcat /usr/share/zabbix/sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p zabbix 
 ```
@@ -41,7 +42,7 @@ Choose the component to be server, frontend, agent:
 ```
 - Edit /etc/zabbix/zabbix_server.conf
 ```
-  DBPassword=password
+  DBPassword="password"
 ```
 
 ### Set-up UFW
