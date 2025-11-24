@@ -1,5 +1,7 @@
 # ServerServices
-Repository for helping with installation and setup of Linux Server Applications
+Guide repository for helping installation and setup of Linux Server Applications an services.
+
+Information might and probably will be 
 
 # Service Types
 
