@@ -37,9 +37,22 @@ Enter and stop the execution
 docker attach <containerName>
 ```
 
-#### Search images  
+#### Docker images  
+Search for a Image
 ```
   docker search <name>
+```
+Download a image
+```
+  docker pull <name>
+```
+Listing Images
+```
+  sudo docker images
+```
+Inspecting a image
+```
+  sudo docker image inspect <name>
 ```
 
 #### Show running containers
@@ -47,9 +60,17 @@ docker attach <containerName>
   docker ps
   docker ps -a  //show all containers
 ```
-#### Start new container
-docker run -it --name <name> <-p 8080:80> <image_id> /bin/bash
 
+#### Start a new container
+- i - Allow interactions with the container
+- t - Calls the tty
+- p 8080:80 - Binds the host's port 8080 to the port 80 of the container
+- <image_id> - Name or id of the desired image 
+- bin/bash - What will be executed on the container
+  
+```
+docker run -it --name <name> <-p 8080:80> <image_id> /bin/bash
+```
 
 ```
 attach Attach to a running container
@@ -98,3 +119,50 @@ Parameters for command **#run**
   -p Port mapping
   -m Memory usage limit
 ```
+## Docker Hub
+Login in terminal
+```
+sudo docker login
+```
+Saving changes in a image
+```
+sudo docker commit <Container ID> <Name:tag><ImageName>
+
+ex: sudo docker commit 8dbd9e392a96 my_img:webserve
+```
+obs: Don't create images with uppercase characters, docker doesn't allow it.
+
+## Sharing the image (push)
+```
+sudo docker push <user/imageName>
+ex: sudo docker push my_username/my_first_image
+```
+## Dockerfiles
+A Dockerfile allows to build custom enviroments automatically by using a file with the desired modifications, creating custom images and making the task of replicating it very easy. 
+
+Example of Dockerfile content
+```
+FROM ubuntu:24.04
+MAINTAINER Fulano da silva <fulano@redes.com>
+RUN apt-get update && apt-get install apache2 -y
+COPY script.sh /usr/local/script.sh
+EXPOSE 8080
+RUN bash "/usr/local/script.sh"
+CMD bash
+```
+
+FROM - Indicates what image will be used as a base
+RUN - Indicates what commands will be executed in the environments shell
+COPY - Copy files located on the station that is running the creation of the image
+CMD - Indicates what command will be executed in the start of a container
+EXPOSE - Allows to expose the port of use by the service
+WORKDIR - Defines the directory where the container will be started.
+
+After building the Dockerfile, run this command:
+```
+sudo docker build -t meu_user/apache_server:latest .
+```
+-t - indicates the name of the image to be created
+'.'- The . at the end of the command indicates that all the files located on the current directory are allowed for the Dockerfile manipulations.
+
+After building, just run the container normally (ex:sudo docker run -it --name apache_my_server meulinux:apache_server /bin/bash)
