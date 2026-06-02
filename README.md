@@ -1,7 +1,8 @@
 # ServerServices
-Guide repository for helping installation and setup of Linux Server Applications an services.
+Guide repository for helping in a quick installation and setup of Linux Server Applications and services.
 
-Information might and probably will be 
+Information might and probably will be outdated depending on the last time the guide was updated.
+Best to always view the official doccumentation.
 
 # Service Types
 
