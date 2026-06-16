@@ -147,12 +147,12 @@ RUN bash "/usr/local/script.sh"
 CMD bash
 ```
 
-FROM - Indicates what image will be used as a base
-RUN - Indicates what commands will be executed in the environments shell
-COPY - Copy files located on the station that is running the creation of the image
-CMD - Indicates what command will be executed in the start of a container
-EXPOSE - Allows to expose the port of use by the service
-WORKDIR - Defines the directory where the container will be started.
+FROM - Indicates what image will be used as a base <br>
+RUN - Indicates what commands will be executed in the environments shell<br>
+COPY - Copy files located on the station that is running the creation of the image<br>
+CMD - Indicates what command will be executed in the start of a container<br>
+EXPOSE - Allows to expose the port of use by the service<br>
+WORKDIR - Defines the directory where the container will be started.<br>
 
 After building the Dockerfile, run this command:
 ```
