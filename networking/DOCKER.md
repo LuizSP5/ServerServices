@@ -1,168 +1,147 @@
-# Docker
+# DOCKER 
+
 
 ## Installation
 
-- Installing from script (newer version)
+  Installing from script (newer version) 
 ```
-  sudo wget -qO- https://get.docker.com/ | sh
-```
-
-or  
-
-- Installing from repositories
-```
-  sudo apt-get install docker.io
+  sudo wget -qO- https://get.docker.com/ | sh 
 ```
 
-- Test Installation
-```
-  sudo docker run hello-world
-```
+## Images
 
-## Commands
-
-#### Services
-```
-  sudo service docker start
-  sudo service docker status
-  sudo service docker stop
-```
-#### Enter inside a container
-Enter and dont stop the execution of container
-```
-  docker exec -it <containerName> bash
-```
-Enter and stop the execution
-```
-docker attach <containerName>
-```
-
-#### Docker images  
-Search for a Image
+  Search for images
 ```
   docker search <name>
 ```
-Download a image
+  Download a image
 ```
   docker pull <name>
 ```
-Listing Images
+  List docker images
 ```
-  sudo docker images
+  docker images
 ```
-Inspecting a image
+  Remove Image
 ```
-  sudo docker image inspect <name>
+  docker rmi <nameOrId>
 ```
-
-#### Show running containers
+  Inspecting a image
 ```
-  docker ps
-  docker ps -a  //show all containers
+  docker image inspect <nameOrId>
 ```
-
-#### Start a new container
-- i - Allow interactions with the container
-- t - Calls the tty
-- p 8080:80 - Binds the host's port 8080 to the port 80 of the container
-- <image_id> - Name or id of the desired image 
-- bin/bash - What will be executed on the container
-  
+  Show the history of a image
 ```
-docker run -it --name <name> <-p 8080:80> <image_id> /bin/bash
+  docker history
 ```
 
-```
-attach Attach to a running container
-build Build a container from a Dockerfile
-commit Create a new image from a container's changes
-cp Copy files/folders from the containers filesystem to the host path
-diff Inspect changes on a container's filesystem
-events Get real time events from the server
-export Stream the contents of a container as a tar archive
-history Show the history of an image
-images List images
-import Create a new filesystem image from the contents of a tarball
-info Display system-wide information
-insert Insert a file in an image
-inspect Return low-level information on a container
-kill Kill a running container
-load Load an image from a tar archive
-login Register or Login to the docker registry server
-logs Fetch the logs of a container
-port Lookup the public-facing port which is NAT-ed to PRIVATE_PORT
+## Containers
 
-pull Pull an image or a repository from the docker registry server
-push Push an image or a repository to the docker registry server
-restart Restart a running container
-rm Remove one or more containers
-rmi Remove one or more images
-run Run a command in a new container
-save Save an image to a tar archive
+  Show containers
+```
+  docker ps       //show running containers
+```
+```
+  docker ps -a    //show all containers
+```
+  Starting a container
 
-start Start a stopped container
-stop Stop a running container
-tag Tag an image into a repository
-top Lookup the running processes of a container
-version Show the docker version information
-wait Block until a container stops, then print its exit code  
+    - i - Allow interactions with the container
+    - t - Calls the tty
+    - p 8080:80 - Binds the host's port 8080 to the port 80 of the container
+    - <image_id> - Name or id of the desired image 
+    - bin/bash - What will be executed on the container
+
 ```
-run Run a command in a new container
-Parameters for command **#run**
+  docker run -it --name <name> <-p 8080:80> <imageID> /bin/bash
 ```
-  -d run in background
-  -i Iterative mode. Mantém o STDIN aberto mesmo sem console anexado
-  -t Aloca uma pseudo TTY (TeleTypewriter)
-  -rm Removes the container after the exection
-  --name Name the container
-  -v Volume mapping
-  -p Port mapping
-  -m Memory usage limit
+
+  Inspect changes on the containers filesystem
 ```
-## Docker Hub
+  docker diff
+```
+  remove a container
+```
+  docker rm <nameOrId>
+```
+
+```
+  docker run <nameOrId>
+```
+Parameters for docker run:
+ - -d : run in background
+ - -i : Iterative mode. Mantém o STDIN aberto mesmo sem console anexado
+ - -t : Allocates a pseudo TTY (TeleTypewriter)
+ - -rm : Removes the container after the exection
+ - --name : Name the container
+ - -v : Volume mapping
+ - -p : Port mapping
+ - -m : Memory usage limit
+
+```
+  docker start <nameOrId>
+```
+
+```
+  docker stop <nameOrId>
+```
+
+```
+  docker restart <nameOrId>
+```
+
+```
+  docker kill <nameOrId>
+```
+An optional identifier used to specify a particular version or variant of the image. If no tag is provided, Docker defaults to latest
+```
+  docker tag <nameOrId> <imageLocal:TAG1.0>
+```
+
+```
+  docker top 
+```
+
+```
+  docker version
+```
+
+```
+  docker wait
+```
+
+
+## Dockerhub
+
 Login in terminal
 ```
-sudo docker login
+  docker login
 ```
 Saving changes in a image
 ```
-sudo docker commit <Container ID> <Name:tag><ImageName>
+  docker commit <containerID> <name/tag><imageName>
 
-ex: sudo docker commit 8dbd9e392a96 my_img:webserve
+  ex: sudo docker commit 8dbd9e392a96 my_img:webserve
 ```
-obs: Don't create images with uppercase characters, docker doesn't allow it.
+  Pull an image or a repository from the docker registry server
+```
+  docker pull
+```
+  Push an image or a repository to the docker registry server
+```
+  docker push <yourUser>/<imageName>
+```
 
-## Sharing the image (push)
-```
-sudo docker push <user/imageName>
-ex: sudo docker push my_username/my_first_image
-```
 ## Dockerfiles
-A Dockerfile allows to build custom enviroments automatically by using a file with the desired modifications, creating custom images and making the task of replicating it very easy. 
 
-Example of Dockerfile content
-```
-FROM ubuntu:24.04
-MAINTAINER Fulano da silva <fulano@redes.com>
-RUN apt-get update && apt-get install apache2 -y
-COPY script.sh /usr/local/script.sh
-EXPOSE 8080
-RUN bash "/usr/local/script.sh"
-CMD bash
-```
 
-FROM - Indicates what image will be used as a base
-RUN - Indicates what commands will be executed in the environments shell
-COPY - Copy files located on the station that is running the creation of the image
-CMD - Indicates what command will be executed in the start of a container
-EXPOSE - Allows to expose the port of use by the service
-WORKDIR - Defines the directory where the container will be started.
+## Docker-compose
 
-After building the Dockerfile, run this command:
-```
-sudo docker build -t meu_user/apache_server:latest .
-```
--t - indicates the name of the image to be created
-'.'- The . at the end of the command indicates that all the files located on the current directory are allowed for the Dockerfile manipulations.
 
-After building, just run the container normally (ex:sudo docker run -it --name apache_my_server meulinux:apache_server /bin/bash)
+## Docker Networks
+
+
+## Docker Swarm
+
+
+
